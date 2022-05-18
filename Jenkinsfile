@@ -8,8 +8,6 @@ pipeline {
     triggers {
   pollSCM '* * * * *'
 }
-checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/vantion/geolocation.git']]])
-
     stages {
         stage('maven package') {
             steps {
